@@ -1,0 +1,404 @@
+:root {
+    --mt-primaria: #0e7c66;
+    --mt-primaria-2: #0a5a4b;
+    --mt-acento: #d7f75b;
+    --mt-tinta: #122420;
+    --mt-cinza: #5c6b67;
+    --mt-fundo: #f2f6f4;
+    --mt-card: #ffffff;
+    --mt-borda: #e2eae6;
+
+    --mt-raio: 18px;
+    padrão */ --mt-sombra: 0 6px 24px rgba(18, 36, 32, .08);
+}
+
+/* ---------- Base ---------- */
+
+body.app-body,
+body.auth-body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--mt-tinta);
+    background-color: var(--mt-fundo);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.mt-brand {
+    font-family: 'Sora', 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.app-main {
+    /* espaço para a navbar fixa */
+    padding-top: 96px;
+    padding-bottom: 56px;
+}
+
+/* ---------- Navbar ---------- */
+
+.mt-navbar {
+    background: linear-gradient(120deg, var(--mt-primaria-2), var(--mt-primaria));
+    box-shadow: 0 2px 14px rgba(10, 90, 75, .25);
+    padding-top: .65rem;
+    padding-bottom: .65rem;
+}
+
+.mt-brand {
+    font-size: 1.25rem;
+    letter-spacing: -.02em;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.mt-brand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--mt-acento);
+    color: var(--mt-primaria-2);
+    font-size: 1.05rem;
+}
+
+.mt-brand-accent {
+    color: var(--mt-acento);
+}
+
+.mt-navbar .nav-link {
+    color: rgba(255, 255, 255, .82);
+    border-radius: 999px;
+    padding: .45rem .95rem;
+    font-weight: 500;
+}
+
+.mt-navbar .nav-link:hover {
+    color: #fff;
+}
+
+.mt-navbar .nav-link.active {
+    background: rgba(255, 255, 255, .16);
+    color: #fff;
+}
+
+.mt-navbar .nav-sair {
+    color: var(--mt-acento);
+}
+
+/* ---------- Cards e blocos ---------- */
+
+.mt-card {
+    background: var(--mt-card);
+    border: 1px solid var(--mt-borda);
+    border-radius: var(--mt-raio);
+    box-shadow: var(--mt-sombra);
+}
+
+.mt-card .card-body {
+    padding: 1.4rem;
+}
+
+.mt-alert {
+    border-radius: 14px;
+}
+
+/* Cartão da Home (saudação) */
+.mt-hero {
+    background: linear-gradient(120deg, var(--mt-primaria-2), var(--mt-primaria) 65%, #14957c);
+    color: #fff;
+    border-radius: var(--mt-raio);
+    padding: 1.8rem 1.6rem;
+    box-shadow: var(--mt-sombra);
+    position: relative;
+    overflow: hidden;
+}
+
+.mt-hero::after {
+    content: "";
+    position: absolute;
+    right: -70px;
+    top: -70px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(215, 247, 91, .35), transparent 70%);
+}
+
+.mt-hero .hero-dia {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: rgba(255, 255, 255, .14);
+    border-radius: 999px;
+    padding: .3rem .9rem;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
+
+.mt-hero h1 {
+    font-size: 1.6rem;
+    margin: .8rem 0 .2rem;
+}
+
+.mt-hero p {
+    color: rgba(255, 255, 255, .85);
+    margin-bottom: 0;
+}
+
+/* Fita da semana */
+.mt-semana {
+    display: flex;
+    gap: .5rem;
+    overflow-x: auto;
+    padding-bottom: .25rem;
+}
+
+.mt-semana .dia-chip {
+    flex: 0 0 auto;
+    min-width: 64px;
+    text-align: center;
+    background: var(--mt-card);
+    border: 1px solid var(--mt-borda);
+    border-radius: 14px;
+    padding: .55rem .4rem;
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--mt-cinza);
+    text-decoration: none;
+}
+
+.mt-semana .dia-chip .chip-icone {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: .15rem;
+}
+
+.mt-semana .dia-chip.hoje {
+    background: var(--mt-acento);
+    border-color: var(--mt-acento);
+    color: var(--mt-primaria-2);
+    box-shadow: 0 4px 14px rgba(215, 247, 91, .5);
+}
+
+.mt-semana .dia-chip.treino {
+    color: var(--mt-primaria);
+}
+
+/* Estatísticas do perfil na Home */
+.mt-stat {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.mt-stat .stat-icone {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(14, 124, 102, .1);
+    color: var(--mt-primaria);
+    font-size: 1.15rem;
+}
+
+.mt-stat .stat-valor {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.1;
+}
+
+.mt-stat .stat-rotulo {
+    font-size: .78rem;
+    color: var(--mt-cinza);
+}
+
+/* ---------- Botões ---------- */
+
+.btn-mt {
+    background: var(--mt-primaria);
+    border: none;
+    color: #fff;
+    border-radius: 999px;
+    padding: .6rem 1.4rem;
+    font-weight: 600;
+}
+
+.btn-mt:hover,
+.btn-mt:focus {
+    background: var(--mt-primaria-2);
+    color: #fff;
+}
+
+.btn-mt-acento {
+    background: var(--mt-acento);
+    border: none;
+    color: var(--mt-primaria-2);
+    border-radius: 999px;
+    padding: .6rem 1.4rem;
+    font-weight: 700;
+}
+
+.btn-mt-acento:hover {
+    background: #c9ef3e;
+    color: var(--mt-primaria-2);
+}
+
+.btn-mt-suave {
+    background: rgba(14, 124, 102, .1);
+    border: none;
+    color: var(--mt-primaria);
+    border-radius: 999px;
+    padding: .5rem 1.1rem;
+    font-weight: 600;
+}
+
+.btn-mt-suave:hover {
+    background: rgba(14, 124, 102, .18);
+    color: var(--mt-primaria-2);
+}
+
+/* ---------- Formulários ---------- */
+
+.form-control,
+.form-select {
+    border-radius: 12px;
+    border-color: var(--mt-borda);
+    padding: .6rem .9rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--mt-primaria);
+    box-shadow: 0 0 0 .2rem rgba(14, 124, 102, .15);
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: .88rem;
+}
+
+/* ---------- Listas de treinos / exercícios ---------- */
+
+.badge-dia {
+    background: rgba(14, 124, 102, .1);
+    color: var(--mt-primaria);
+    font-weight: 700;
+    border-radius: 999px;
+    padding: .35rem .8rem;
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+
+.badge-descanso {
+    background: #fff3cd;
+    color: #8a6d00;
+}
+
+.exercicio-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .8rem;
+    padding: .85rem 0;
+    border-bottom: 1px solid var(--mt-borda);
+}
+
+.exercicio-item:last-child {
+    border-bottom: none;
+}
+
+.exercicio-series {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    color: var(--mt-primaria);
+    white-space: nowrap;
+}
+
+/* ---------- Tela de login / cadastro ---------- */
+
+body.auth-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background:
+        radial-gradient(1000px 500px at 85% -10%, rgba(215, 247, 91, .22), transparent 60%),
+        linear-gradient(150deg, var(--mt-primaria-2), var(--mt-primaria) 55%, #0f8a70);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 430px;
+    background: var(--mt-card);
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(6, 40, 33, .35);
+    padding: 2.2rem 2rem;
+}
+
+.auth-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    margin-bottom: .4rem;
+}
+
+.auth-logo .mt-brand-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 1.4rem;
+    border-radius: 14px;
+}
+
+.auth-logo .auth-nome {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: var(--mt-tinta);
+    letter-spacing: -.03em;
+}
+
+.auth-logo .auth-nome span {
+    color: var(--mt-primaria);
+}
+
+.auth-frase {
+    text-align: center;
+    color: var(--mt-cinza);
+    margin-bottom: 1.6rem;
+}
+
+.auth-link {
+    color: var(--mt-primaria);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-link:hover {
+    color: var(--mt-primaria-2);
+    text-decoration: underline;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 576px) {
+    .mt-hero h1 {
+        font-size: 1.35rem;
+    }
+
+    .app-main {
+        padding-top: 88px;
+    }
+}
