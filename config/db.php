@@ -1,13 +1,13 @@
 <?php
 /**
  * Conexão com o banco de dados (PDO + MySQL).
- * Ajuste as constantes abaixo se o seu MySQL usar outro usuário/senha.
+ * Ajuste as constantes usuário/senha.
  */
 
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'mytreino');
-define('DB_USER', 'root'); // padrão do XAMPP
-define('DB_PASS', '');     // padrão do XAMPP (sem senha)
+define('DB_USER', 'root'); 
+define('DB_PASS', '');    
 
 try {
     $pdo = new PDO(
